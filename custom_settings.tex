@@ -1,0 +1,44 @@
+\usepackage{ifpdf}
+\usepackage{amsmath,  amssymb}
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+                            
+\usepackage{makeidx}         % allows index generation
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+
+\usepackage{graphicx}
+  %\usepackage[pdftex]{graphicx} %don't use [pdftex] attribute to support import of graphics object belonging to eps,ps categories
+  
+  % declare the path(s) where your graphic files are
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+   \ifpdf
+   	\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+   	\graphicspath{{images/}{images/pdf/}}
+   \else
+   	\DeclareGraphicsExtensions{.ps,.eps}
+   	\graphicspath{{images/}{images/ps/}}
+   \fi
+   
+
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{verbatim}	% for use of \begin{comment} \end{comment} statements
+\usepackage{multirow} % to use multirow in definition of tables
+
+\newcommand{\si}{\begin{enumerate}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{enumerate}}
+
+% These commands can be placed in the preamble (to be a global definition)
+% or locally inside the \begin{table}...\end{table} syntax to adjust vertical space inside table cells.
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+\makeindex     
