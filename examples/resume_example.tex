@@ -1,0 +1,130 @@
+\documentclass[line]{latex_lib/resume}
+
+\usepackage{pifont} 
+\usepackage{verbatim}
+
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.5in
+\itemsep=0in
+\parsep=0in
+
+\newenvironment{list1}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.11in}}}{\end{list}}
+      
+\newenvironment{list2}{
+  \begin{list}{$-$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.175in}}}{\end{list}
+}
+
+
+\newcounter{itemcounter}
+
+\newenvironment{list3}{
+  \begin{list}{\arabic{itemcounter}.}{\usecounter{itemcounter}\leftmargin=0.15in}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      }}{\end{list}
+}
+
+
+
+\begin{document}
+
+\name{\huge Prantik Bhattacharyya}  %\vspace*{.05in}}
+
+\begin{resume}
+\section{\sc \bf Contact Information}
+\begin{ncolumn}{2}
+San Francisco 	&   {\it Phone:} 123-456-7890\\ 
+California, USA &   {\it Github:} https://github.com/\verb+~+prantik\\ 
+\end{ncolumn}
+
+\section{\sc \bf Research Interests}
+Software Development, Large Scale Data Analysis, 
+Social Search Engines, Social Network Theory.
+
+\section{\sc \bf Education}
+\begin{list1}
+\item Ph.D., Computer Science, University of California, Davis \hfill{\it{July. 2012}} 
+\begin{list2}
+\item Thesis title: Search and Analysis of User Keywords in Online Social Networks
+\end{list2}
+\end{list1}
+
+\begin{list1}
+\item M.S., Computer Science,  University of California, Davis \hfill{\it{Sep. 2007 - Dec. 2009}}
+\end{list1}
+
+\begin{list1}
+\item B.E., Computer Science and Engineering, Jadavpur University, India \hfill{\it{Jul. 2003 - Jun. 2007}}
+\end{list1}
+
+
+\section{\sc \bf Technical Skills} 
+\begin{list2}
+\item Languages:  Scala, Python, Java, MySQL
+\item	Web Technologies: JSON, XML, HTML
+\item	Big data computing technologies: Hadoop, Hive, HBase, Storm
+\item	Web application framework: Play! 
+\item Operating Systems: Linux, Mac OS X, Windows 
+\end{list2}
+
+
+\section{\sc \bf Experience}
+
+\begin{list1}
+\item {\bf Software Engineer, Klout} \hfill {\it{Aug. 2012 - Present}}
+
+\begin{list2}
+\item Large scale data collection frameworks to collect social interactions spread across multiple social media platforms.
+\item	Develop real-time pipeline infrastructure for processing social feeds, feature extraction and analysis of internet scale-data.
+\end{list2}
+\end{list1}
+
+
+\begin{list1}
+\item {\bf Graduate Student Researcher, University of California Davis} \hfill {\it{Jul. 2008 - Present}}
+\begin{list1}
+\item[]
+Adviser: Prof. S. (Shyhtsun) Felix Wu, Computer Science Department\\
+\end{list1}
+
+\begin{list2}
+\item Developed \textit{InfoSearch}, a social search engine based on Facebook Platform. [\ref{prantik-rank11}] 
+\item Validated the relationship between user similarity and social network topology. [\ref{prantik-snam10}]
+\end{list2}
+\end{list1}
+
+
+\section{\sc \bf Publications}
+\begin{list3}
+\item{\label{prantik-rank11} {Prantik Bhattacharyya}, and Shyhtsun Felix Wu. \textit{InfoSearch: A Social Search Engine.} To appear in Recent Advances in Data mining: Methodologies, Challenges and Opportunities, 2013.}
+
+\item{\label{prantik-snam10}  {Prantik Bhattacharyya}, Ankush Garg, and S. Felix Wu. \textit{Analysis of User Keyword Similarity in Online Social Networks.} In Social Networks Analysis and Mining Journal (by Springer), 2010.}
+\end{list3}
+
+\section{\sc \bf Talks}
+\begin{list2}
+\item \textit{Social Network Model based on Keyword Categorization.} In ASONAM '09: International Conference on Advances in Social Network Analysis and Mining, Athens, Greece, July 2009.
+\end{list2}
+
+\section{\sc \bf References}
+%Available upon request.   
+\begin{tabular}{lll}
+S. (Shyhtsun) Felix Wu,  & & Travis Lybbert \\
+Professor, Computer Science, &  & Professor, Agricultural \& Resource Economics, \\
+University of California, Davis, &  & University of California, Davis, \\
+Email: wu@cs.ucdavis.edu & & Email: tlybbert@ucdavis.edu
+\end{tabular}
+
+\end{resume}
+\end{document}
