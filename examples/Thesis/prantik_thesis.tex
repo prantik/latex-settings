@@ -1,0 +1,423 @@
+% The UC Davis Dissertation Formatting Requirements can be found at
+% http://www.gradstudies.ucdavis.edu/students/filing.html
+
+% SPECIFY AN APPROPRIATE DOCUMENT CLASS WITH APPROPRIATE OPTIONS:
+\documentclass[letterpaper, 12pt, oneside]{book} 
+% for final version, uncomment above line and comment the line below
+%\documentclass[letterpaper, 10pt, twoside,draft]{book} % draft
+
+
+% SPECIFY THE PAGE AND HEADER FORMATTING (which is completely a hack):
+    \usepackage[left=108pt, right=74pt, top=108pt, bottom=81pt, dvips, pdftex]{geometry}
+    %\usepackage[thesis,draft,pdfinfo,dvips]%{ka-paper}
+
+%new additions begin
+		\usepackage{ae,aecompl}
+
+		\usepackage{perpage}
+		\MakePerPage{footnote}
+		
+		\usepackage{moreverb}
+		%\usepackage[boxed]{algorithm2e}
+		\usepackage[ruled,linesnumbered,noend]{algorithm2e}
+				
+		\usepackage{epsfig}
+		\usepackage{graphicx}	% For including and formatting image files
+		\usepackage{subfig}
+		\usepackage{verbatim}	% for use of \begin{comment} \end{comment} statements
+		\usepackage{multirow} % to use multirow in definition of tables
+
+		\usepackage{float}
+		\floatstyle{ruled}
+		\newfloat{program}{thp}{lop}
+		\floatname{program}{Program}
+    
+    \usepackage{fancyhdr} % See this package's documentation for more
+    \pagestyle{fancy}     % information about the following commands
+    \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+    \fancyhf{}
+    \fancyhead[R]{\thepage}
+    %\fancyhead[L]{\rightmark}
+    \renewcommand{\headrulewidth}{0pt} % change this to put a line between
+                                       % the header and the main text
+    
+    % The following command sets the name of the Bibliography:
+    \renewcommand{\bibname}{Bibliography}
+
+    
+    % EXTREMELY COMMON LaTeX PACKAGES TO INCLUDE:
+    \usepackage{amsmath,amsthm, amsfonts,amssymb} % For AMS Beautification
+    \usepackage{setspace} % For Single & Double Spacing Commands
+    \usepackage[linktocpage,bookmarksopen,bookmarksnumbered,% For PDF navigation
+                pdftitle={PhD Dissertation by Prantik Bhattacharyya},%   and URL hyperlinks
+                pdfauthor={Prantik Bhattacharyya},%
+                pdfsubject={PhD Dissertation},%
+                pdfkeywords={UC Davis PhD Dissertation, Prantik Bhattacharyya}]{hyperref}
+    
+    % SOME SLIGHTLY LESS COMMON LaTeX PACKAGES TO INCLUDE 
+    % (uncomment as necessary)
+%     \usepackage{pstricks, pst-plot} % For creating images & figures
+%     \usepackage[vcentermath]{youngtab} % For typesetting Young Tableaux
+
+    % COMPLETELY OPTIONAL LaTeX PACKAGES TO INCLUDE:
+    % (uncomment as necessary)
+%     \usepackage{lineno} % For Line Numbering
+%     \usepackage{appendix} % For Control of Appendix Numbering & Location
+
+   
+    
+    % DEFINE SOME USEFUL THEOREMS, ENVIRONMENTS, ETC.:
+ 		\newtheorem{definition}{Definition}
+		\newtheorem{theorem}{Theorem}
+
+    \newtheorem{Theorem}{Theorem}[section]
+    \newtheorem{Proposition}[Theorem]{Proposition}
+    \newtheorem{Lemma}[Theorem]{Lemma}
+    \newtheorem{Corollary}[Theorem]{Corollary}
+    \theoremstyle{definition}
+        \newtheorem{Definition}[Theorem]{Definition}
+        \newtheorem{Example}[Theorem]{Example}
+        \newtheorem{Conjecture}[Theorem]{Conjecture}
+        \newtheorem{Problem}[Theorem]{Problem}
+        \newtheorem{Algorithm}[Theorem]{Algorithm}
+        \newtheorem{CardGame}[Theorem]{Card Game}
+        \newtheorem{Strategy}[Theorem]{Strategy}
+        \newtheorem{Question}[Theorem]{Question}
+    \theoremstyle{remark}
+        \newtheorem{Remark}[Theorem]{Remark}
+    \newenvironment{Sketch}{\par\noindent{\sc Sketch of Proof}\quad}{\hfill\qed\par\smallskip}
+    \newenvironment{Proof}{\par\noindent{\sc Proof}\quad}{\hfill\qed\par\smallskip}
+    \newenvironment{ReuseTheorem}[2]{\par\vspace{12pt}\noindent{\bf #1~\ref{#2}$'$.}\it}{\par\vspace{12pt}}
+    \newenvironment{RestateTheorem}[2]{\par\vspace{12pt}\noindent{\bf #1~\ref{#2}.}\it}{\par\vspace{12pt}}
+
+
+		\newcommand{\si}{\begin{enumerate}} 
+		\newcommand{\ii}{\item} 
+		\newcommand{\ei}{\end{enumerate}} 
+		
+		\def \nvspace {0in}
+
+    % DETERMINE HOW EXTENSIVELY TO NUMBER EQUATIONS AND FIGURES:
+    \numberwithin{equation}{section}
+    \numberwithin{figure}{section}
+    
+    % These commands can be placed in the preamble (to be a global definition)
+% or locally inside the \begin{table}...\end{table} syntax to adjust vertical space inside table cells.
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+    
+    % DEFINE NEW ANY COMMANDS (for your own convenience):
+    \newcommand{\n}{\vspace{12pt}} % for typesetting line breaks with 12
+                                   % Postscript points of extra whitespace
+      
+    \newcommand{\newchapter}[3] % for typesetting new chapters with the
+	{                           % correct initial page numbering style
+        % Arguments: (#1) Short name for chapter, which is used in 
+        %                 any running headers
+        %            (#2) Medium length name for chapter, which is
+        %                 used in the table of contents
+        %            (#3) Long name for chapter, which is typeset at 
+        %                 the starting the chapter
+        \chapter[#2]{#3}
+        \chaptermark{#1}
+        \thispagestyle{myheadings}
+	}
+
+
+\begin{document}
+    
+    % Toggle commenting the following command out in order to toggle 
+    % the inclusion of line numbering (this requires the ``lineno'' 
+    % package to be includes above):
+%     \linenumbers
+    
+
+    % The following commands produce page numbering at the bottom
+    % center using roman numerals per UC Davis requirements for the
+    % front matter of the dissertation:
+    \pagenumbering{roman}
+    \pagestyle{plain}
+    
+       
+    % %------------------------------------------------------------------------------
+    % 
+    % %---------------------------- NEW PAGE ----------------------------------------
+    %
+    % %---------------------------- TITLE PAGE---------------------------------------
+
+
+    % The following command produces single-spaced lines for the title page:
+    \singlespacing
+
+    ~\vspace{-1in} % to force the title up a bit higher
+    \begin{center}
+
+       \begin{huge}
+            Thesis Title
+        \end{huge}
+        \\\n\n
+        By\\\n
+        {\sc PRANTIK BHATTACHARYYA}\\\n
+        M.S. (University of California, Davis) 2009\n\n      
+         
+%        A technical Reported submitted for\\\n
+%        Ph.D. Qualifying Examination\\\n
+%				in \\\n
+%        COMPUTER SCIENCE\\\n
+%				in the\\\n
+%        OFFICE OF GRADUATE STUDIES\\\n
+%        of the\\\n
+%        UNIVERSITY OF CALIFORNIA\\\n
+%        DAVIS\\\n\n
+
+        DISSERTATION\\\n
+        Submitted in partial satisfaction of the requirements for the degree of\\\n
+        DOCTOR OF PHILOSOPHY\\\n
+        in\\\n
+        COMPUTER SCIENCE\\\n
+        in the\\\n
+        OFFICE OF GRADUATE STUDIES\\\n
+        of the\\\n
+        UNIVERSITY OF CALIFORNIA\\\n
+        DAVIS\\\n
+%        
+        Approved:\\\n\n
+          
+        \rule{4in}{1pt}\\
+        ~Committee Chair\\\n\n
+        
+        \rule{4in}{1pt}\\
+        ~Committee Member\\\n\n
+        
+       \rule{4in}{1pt}\\
+        ~Committee Member\\\n
+
+      %  \vfill
+        
+        Committee in Charge\\
+        ~2013
+
+    \end{center}
+
+    \newpage
+    
+       
+    % %------------------------------------------------------------------------------
+    % 
+    % %------------------------------- NEW PAGE -------------------------------------
+    %
+    % %------------------------------ COPYRIGHT PAGE --------------------------------
+        
+    % The following commands create a copyright notice page. This 
+    % page can be deleted if you would prefer to not include it.
+        
+
+    ~\\[7.75in] % to place the copyright near the bottom of the page
+    \centerline{Copyright \copyright\ Prantik Bhattacharyya, 2013.}
+    \centerline{All rights reserved.}
+
+   \thispagestyle{empty}
+    \addtocounter{page}{-1}
+
+    \newpage
+    
+    % %------------------------------------------------------------------------------      
+    % %------------------------------------------------------------------------------
+    % 
+    % %---------------------------------- NEW PAGE ----------------------------------
+    %
+    % %------------------------------ DEDICATION PAGE -------------------------------
+    
+    % The following command inserts a nice dedication to whomever you
+    % feel is appropriate.  This page can be deleted if you would
+    % prefer to not include it.
+	    \centerline{To friends and family.}
+	    
+	    \newpage
+
+
+    % The following command produces double-spaced lines for the
+    % remainder of the document:
+%    \doublespacing
+    
+    % 
+    % %---------------------------------- NEW PAGE ----------------------------------
+    %
+    % %---------------------------------- ABSTRACT ----------------------------------
+    
+    % Toggle the commenting of the following command in order to
+    % include a page number.  The purpose of this is to allow the
+    % create an autonomous Abstract Page per University Requirements.
+    % 
+    % Note that the page numbering style for the autonomous Abstract 
+    % Page needs to be adjusted. See the Grad Studies website.
+    %\thispagestyle{empty}
+
+    ~\vspace{-1in} % to force the attribution text up a bit higher
+    \begin{flushright}
+        \singlespacing
+        Prantik Bhattacharyya\\
+        Computer Science\\
+        University of California, Davis\\\n
+    \end{flushright}
+
+    \centerline{\large Thesis Title}
+    
+    \vspace{0.3in}
+    
+    \centerline{\textbf{\underline{Abstract}}}
+    
+    \vspace{0.2in}
+    
+        % Either type your Abstract Text here or input a file 
+        % containing it:
+        \input{texfiles/abstract}
+    
+    \newpage
+    
+    % %------------------------------------------------------------------------------
+    % 
+    % %---------------------------------- NEW PAGE ----------------------------------
+    %
+    % %------------------------------ Keywords -------------------------------
+
+    \chapter*{\vspace{5in}}
+    % the vspace command forces the title up a bit higher 
+
+        % Either type your Keywords Text here or input a file 
+        % containing it:
+        \input{keywords}
+    
+    \newpage
+
+
+       
+    % %------------------------------------------------------------------------------
+    % 
+    % %---------------------------------- NEW PAGE ----------------------------------
+    %
+    % %------------------------------ ACKNOWLEDGMENTS -------------------------------
+
+    \chapter*{\vspace{-1.5in}Acknowledgments}
+    % the vspace command forces the title up a bit higher 
+
+        % Either type your Acknowledgments Text here or input a file 
+        % containing it:
+        \input{texfiles/acknowledgments}
+    
+    \newpage
+       
+    % %------------------------------------------------------------------------------
+    % 
+    % %---------------------------------- NEW PAGE ----------------------------------
+    %
+    % %------------------------------ TABLE OF CONTENTS -----------------------------
+   
+    
+    % The following command creates the table of contents:
+    \tableofcontents
+    %\setcounter{tocdepth}{2}
+    
+    % The following command, though it follows the above 
+    % ``\tableofcontents'' command, actually causes the Table of 
+    % Contents to start on a new page:
+    \newpage
+    
+    \listoffigures 
+    \listoftables 
+    \newpage
+     
+    \addcontentsline{toc}{section}{List of Figures}
+    \addcontentsline{toc}{section}{List of Tables}
+    
+
+    % The following command produces double-spaced lines for the
+    % remainder of the document:
+    \doublespacing
+    
+    
+    
+    % %------------------------------------------------------------------------------
+    % 
+    % %---------------------------------- NEW PAGE ----------------------------------
+    %
+    % %---------------------------- BEGIN TEXT OF THESIS ----------------------------
+
+
+
+    % The following commands produce page numbering at the top right
+    % using arabic numerals per UC Davis requirements for the main
+    % text of the dissertation:
+    \pagestyle{fancy}
+    \pagenumbering{arabic}
+       
+    % %------------------------------------------------------------------------------
+    % 
+    % %--------------------------------- NEW CHAPTER --------------------------------
+    %
+    % %-------------------------------- INTRODUCTION --------------------------------
+
+    \newchapter{Introduction}{Introduction}{Introduction}
+    \label{sec:Intro}
+
+
+        % Either type your Introduction here or input a file 
+        % containing it using the ``\input'' command.
+        
+        % You will probably want to split your chapter up into several
+        % sections (with each section possibly even split up into
+        % subsections), each of which can either be written directly
+        % in this file or input from an external file as above.
+        %
+        % Suggested sections for your introduction include a general 
+        % overview (with historical motivation as appropriate) and a 
+        % summary of your main results. E.g.:
+    
+    
+        \input{texfiles/introduction}
+        
+        \section{Research Contributions}
+        \label{sec:Intro:research_contribution}
+        \input{texfiles/research_contribution}        
+        
+        
+    % %------------------------------------------------------------------------------
+    % 
+    % %--------------------------------- NEW CHAPTER --------------------------------
+    %
+    % %----------------------- [INSERT TITLE OF CHAPTER TWO] ------------------------
+    
+    
+    \newchapter{Chapter One Title}{Chapter One Title}{Chapter One Title}
+    \label{sec:chapterOne}
+	\input{chapterOne}    
+
+        % Either type your chapter's text here or input a file 
+        % containing it using the ``\input'' command.
+        
+        % You will probably want to split your chapter up into several
+        % sections (with each section possibly even split up into
+        % subsections), each of which can either be written directly
+        % in this file or input from an external file as above. E.g.:
+		
+
+        % You should repeat this portion for each additional chapter 
+        % as it's appropriate to your dissertation.
+                  
+        
+    % %------------------------------------------------------------------------------
+    % 
+    % %-------------------------------- NEW PAGE ------------------------------------
+    %
+    % %------------------------------- REFERENCES ----------------------------------
+    
+    % remember to change bibliography settings for final version
+    
+        %\input{references}
+      
+      
+\bibliographystyle{abbrv}
+\bibliography{references}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\end{document}
