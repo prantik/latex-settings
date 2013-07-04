@@ -1,0 +1,34 @@
+\documentclass{letter}
+
+\usepackage{latex_lib/letterbib}
+
+%\include{custom_settings}
+
+\newcommand{\si}{\begin{enumerate}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{enumerate}}
+
+
+\signature{} 
+\begin{document}
+\begin{letter}{} 
+
+\begin{center}{} 
+\end{center} \vfill 
+
+\opening{Dear Reader,}
+ 
+This example letter was created using pdflatex based on the letter template [\ref{prantik-letter-template}]. Hope you find it useful.
+ 
+\closing{Sincerely yours,}
+  
+\encl{}                 
+
+\si
+\ii{\label{prantik-letter-template}  {Prantik Bhattacharyya}. \textit{Letter Template.} Available at https://github.com/ prantik/latex-settings, 2013.}
+\ei
+
+\end{letter}
+\bibliographystyle{plain}
+\end{document}
+
